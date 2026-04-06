@@ -1,2 +1,2 @@
 # practice.sql
-practice makes man perfect
+“You are one practice session away from improvement.”
