@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS bank_system;
+USE bank_system;
+
+CREATE TABLE accounts (
+    account_id   INT PRIMARY KEY AUTO_INCREMENT,
+    name         VARCHAR(100),
+    account_type VARCHAR(50),
+    balance      DECIMAL(10,2)
+);
+
+INSERT INTO accounts (name, account_type, balance) VALUES
+('Alaguvel', 'Savings',  5000.00),
+('Rahul',    'Current',  12000.00),
+('Priya',    'Savings',  8500.00),
+('Karthik',  'Current',  3000.00);
+
+
+SELECT * FROM accounts;
+
+-- View only savings accounts
+SELECT name, balance
+FROM accounts
+WHERE account_type = 'Savings';
+
+-- Highest balance
+SELECT name, balance
+FROM accounts
+ORDER BY balance DESC
+LIMIT 1;
+
+-- Total balance in bank
+SELECT SUM(balance) AS total_balance FROM accounts;
+
+-- Average
+SELECT AVG(balance) AS average_balance FROM accounts;
